@@ -1,0 +1,53 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export LANG:en_US\x2eUTF\x2d8
+SETUVAR --export LANGUAGE:en_US\x2eUTF\x2d8
+SETUVAR --export LC_ALL:en_US\x2eUTF\x2d8
+SETUVAR __fish_classic_git_prompt_initialized:\x1d
+SETUVAR __fish_init_1_50_0:\x1d
+SETUVAR __fish_init_2_39_8:\x1d
+SETUVAR __fish_init_2_3_0:\x1d
+SETUVAR fish_color_autosuggestion:586e75
+SETUVAR fish_color_command:93a1a1
+SETUVAR fish_color_comment:586e75
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:268bd2
+SETUVAR fish_color_error:dc322f
+SETUVAR fish_color_escape:cyan
+SETUVAR fish_color_git_added:green
+SETUVAR fish_color_git_ahead:red
+SETUVAR fish_color_git_clean:green
+SETUVAR fish_color_git_deleted:red
+SETUVAR fish_color_git_dirty:red
+SETUVAR fish_color_git_modified:blue
+SETUVAR fish_color_git_renamed:magenta
+SETUVAR fish_color_git_staged:yellow
+SETUVAR fish_color_git_unmerged:yellow
+SETUVAR fish_color_git_untracked:cyan
+SETUVAR fish_color_history_current:cyan
+SETUVAR fish_color_host:\x2do\x1ecyan
+SETUVAR fish_color_match:cyan
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:cyan
+SETUVAR fish_color_param:839496
+SETUVAR fish_color_quote:657b83
+SETUVAR fish_color_redirection:6c71c4
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3dpurple
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3dpurple
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:\x2do\x1egreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x1b\x5b32mhelp\x1b\x5b30m\x1b\x5b0\x3b10m\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:555\x1eyellow
+SETUVAR fish_pager_color_prefix:cyan
+SETUVAR fish_pager_color_progress:cyan
+SETUVAR fish_prompt_git_status_added:\u271a
+SETUVAR fish_prompt_git_status_deleted:\u2716
+SETUVAR fish_prompt_git_status_modified:\x2a
+SETUVAR fish_prompt_git_status_renamed:\u279c
+SETUVAR fish_prompt_git_status_unmerged:\u2550
+SETUVAR fish_prompt_git_status_untracked:\x2e
+SETUVAR fish_user_paths:/home/dave/\x2efzf/bin
