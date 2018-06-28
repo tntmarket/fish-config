@@ -4,14 +4,14 @@ function dave
       case submit
          if test $argv[2]
             set description $argv[2]
-            if test (branch-name) = master
+            if test (git_branch_name) = master
                echo "Creating new branch... $description"
                __new_branch (__description_to_branch_name $description)
             end
             echo "Saving new work..."
             __save "$description"
          else
-            if test (branch-name) = master
+            if test (git_branch_name) = master
                echo "You have to provide a description!"
             else
                echo "Amending previous work..."
@@ -19,7 +19,7 @@ function dave
             end
          end
       case yolo
-         set description $argv[1]
+         set description $argv[2]
          if __git_commit $description
             g sync
          end
@@ -41,7 +41,7 @@ end
 function __save --argument-names description
    if __git_commit $description
       g sync
-      dev cmd "git push origin HEAD && review-branch"
+      dev cmd "git push origin HEAD && review-branch --publish"
       # dev cmd "git push origin HEAD && review-branch --change-description \"$description\""
    else
    end
@@ -50,7 +50,7 @@ end
 function __amend
    if __git_amend
       g sync
-      dev cmd "git push origin HEAD --force && review-branch --change-description \"CR Feedback\""
+      dev cmd "git push origin HEAD --force && review-branch --publish"
    else
    end
 end

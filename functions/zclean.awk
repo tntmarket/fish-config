@@ -1,0 +1,1 @@
+/Users/davelu/.config/fisherman/z/functions/zclean.awk

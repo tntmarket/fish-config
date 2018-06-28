@@ -13,7 +13,7 @@ function g
 
       case pull
          dev cmd "git pull"
-         __sync_files
+         g sync
 
       case delete
          dev cmd "git branch -D $rest_of_args"
@@ -49,15 +49,28 @@ function g
          git rebase --continue
 
       case sync
-         git fetch dev
-         git reset --hard dev/(__branch_name)
+         git fetch --all
+         git reset --hard dev/(git_branch_name)
 
       case b
          git branch
+
+      case save
+         if dev cmd "git add -A && git config --global user.name \"Dave Lu\" && git config --global user.email \"davelu@yelp.com\" && git commit -m \"$rest_of_args\""
+            g sync
+         end
+
+      case amend
+         if dev cmd "git add -A && git config --global user.name \"Dave Lu\" && git config --global user.email \"davelu@yelp.com\" && git commit --amend --no-edit"
+            g sync
+         end
+
+      case forward
+         g co $rest_of_args
+         if g pull
+            dev cmd "git push origin HEAD --force"
+            g sync
+         end
    end
 end
 
-
-function __branch_name
-   git rev-parse --abbrev-ref HEAD
-end

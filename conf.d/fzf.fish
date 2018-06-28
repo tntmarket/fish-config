@@ -1,0 +1,1 @@
+/Users/davelu/.config/fisherman/fzf/conf.d/fzf.fish

@@ -1,0 +1,1 @@
+/Users/davelu/.config/fisherman/z/functions/__z_clean.fish
