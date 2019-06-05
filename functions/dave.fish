@@ -41,8 +41,11 @@ end
 function __save --argument-names description
    if __git_commit $description
       g sync
-      dev cmd "git push origin HEAD && review-branch --publish"
-      # dev cmd "git push origin HEAD && review-branch --change-description \"$description\""
+      if dev cmd "git config branch."(git_branch_name)".reviewnumber"
+         dev cmd "git push origin HEAD && review-branch --publish --change-description \"$description\""
+      else
+         dev cmd "git push origin HEAD && review-branch --publish"
+      end
    else
    end
 end

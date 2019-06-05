@@ -8,7 +8,7 @@
 
 function dev
    if test -z $argv[1]
-      ssh -At "dev31-uswest1adevc" "cd "(dev path)"; exec bash -l"
+      ssh -t "m" "cd "(dev path)"; exec bash -l"
       return
    end
 
@@ -16,10 +16,15 @@ function dev
    set rest_of_args $argv[2..-1]
    switch $command
       case cmd
-         ssh -A "dev31-uswest1adevc" "cd "(dev path)"; $rest_of_args"
+         ssh "m" "cd "(dev path)"; $rest_of_args"
 
       case tmux
-         ssh -A davelu@dev31-uswest1adevc -t "agenttmux2 -CC attach"
+         if ssh "m" -t "agenttmux2 -2 -CC attach"
+            echo "Reusing existing tmux session"
+         else
+            echo "Creating new tmux session"
+            ssh "m" -t "agenttmux2 -2 -CC"
+         end
 
       case path
          pwd|sed "s=$HOME/pg=~/pg="

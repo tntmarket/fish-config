@@ -40,7 +40,7 @@ function g
          dev cmd "git clone git@git.yelpcorp.com:$rest_of_args $rest_of_args"
          git clone git@git.yelpcorp.com:$rest_of_args $rest_of_args
          cd $rest_of_args
-         git remote add 'dev' ssh://davelu@dev31-uswest1adevc/nail/home/davelu/pg/$rest_of_args
+         git remote add 'dev' ssh://davelu@dev77-uswest1adevc/nail/home/davelu/pg/$rest_of_args
 
       # Resolve merge conflicts
       case resolve
@@ -62,6 +62,11 @@ function g
 
       case amend
          if dev cmd "git add -A && git config --global user.name \"Dave Lu\" && git config --global user.email \"davelu@yelp.com\" && git commit --amend --no-edit"
+            g sync
+         end
+
+      case fix
+         if dev cmd "git add -A && git config --global user.name \"Dave Lu\" && git config --global user.email \"davelu@yelp.com\" && git commit --fixup $rest_of_args && GIT_SEQUENCE_EDITOR=: git rebase -i --autosquash"
             g sync
          end
 
